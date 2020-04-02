@@ -1,6 +1,20 @@
 pipeline {
     agent none
     stages {
+
+        stage('Sonarqube') {
+        agent any
+         environment {
+               scannerHome = tool 'sonar_scanner'
+            }
+         steps {
+            withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
+                sh"${scannerHome}/bin/sonar-scanner"
+            }
+        }
+    }
+
+
         stage('Check bash syntax') {
             agent { docker { image 'koalaman/shellcheck-alpine:stable' } }
             steps {

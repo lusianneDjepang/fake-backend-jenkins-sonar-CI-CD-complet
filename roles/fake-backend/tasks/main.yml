@@ -34,9 +34,9 @@
   git:
     repo: "{{ fake_backend_source_repo }}"
     dest: "{{ home }}/application-battleboat"
-    accept_hostkey: yes
-    force: yes
-    recursive: no
+    accept_hostkey: true
+    force: true
+    recursive: false
     key_file: "{{ home }}/.ssh/id_rsa"
     version: "{{ fake_backend_source_branch }}"
   tags:
@@ -48,7 +48,7 @@
   docker_image:
     path: "{{ home }}/application-battleboat/fake-backend"
     name: "{{ docker_hub_login }}/fake-backend"
-    push: yes
+    push: true
     tag: "{{ fake_backend_image_tag }}"
   tags:
     - build

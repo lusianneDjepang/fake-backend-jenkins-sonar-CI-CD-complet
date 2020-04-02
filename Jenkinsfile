@@ -37,13 +37,6 @@ pipeline {
                 '''
             }
         }
-        stage('Check yaml syntax') {
-            agent { docker { image 'sdesbure/yamllint' } }
-            steps {
-                sh 'yamllint --version'
-                sh 'yamllint \${WORKSPACE}'
-            }
-        }
         stage('Check markdown syntax') {
             agent { docker { image 'ruby:alpine' } }
             steps {

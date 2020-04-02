@@ -36,7 +36,7 @@
     dest: "{{ home }}/application-battleboat"
     accept_hostkey: true
     force: true
-    recursive: false
+    recursive: no
     key_file: "{{ home }}/.ssh/id_rsa"
     version: "{{ fake_backend_source_branch }}"
   tags:

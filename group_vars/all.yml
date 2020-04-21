@@ -1,13 +1,13 @@
 ---
-fake_backend_source_repo: "git@github.com:lusianneDjepang/fake-backend.git"
+fake_backend_source_repo: "git@github.com:lusianneDjepang/fake-backend_for-sonar-projet.git"
 fake_backend_source_branch: "master"
 fake_backend_image_tag: "JenkinsCICDnew"
 
 home: "/home/centos"
 volume_database: "/srv/db-data"
 
-ip_addr_preprod: "54.147.92.45"
-ip_addr_prod: "34.201.123.32"
+ip_addr_preprod: "54.197.19.57"
+ip_addr_prod: "3.92.49.186"
 port_app: "8181"
 
 #secret data vaulted

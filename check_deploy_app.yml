@@ -24,19 +24,19 @@
         - preprod
 
     - block:
-      - name: Check that you can connect to webpage
-        uri:
-          url: http://{{ ip_addr_prod }}:{{ port_app }}
-        retries: 5
-        delay: 30
+        - name: Check that you can connect to webpage
+          uri:
+            url: http://{{ ip_addr_prod }}:{{ port_app }}
+          retries: 5
+          delay: 30
 
-      - name: Check webservice application production
-        uri:
-          url: http://{{ ip_addr_prod }}:{{ port_app }}/health
-          method: GET
+        - name: Check webservice application production
+          uri:
+            url: http://{{ ip_addr_prod }}:{{ port_app }}/health
+            method: GET
         #register: _result
         #until: _result.status == 200
-        retries: 8 # 720 * 5 seconds = 1hour (60*60/5)
-        delay: 50 # Every 5 second
+          retries: 8 # 720 * 5 seconds = 1hour (60*60/5)
+          delay: 50 # Every 5 second
       tags:
         - prod

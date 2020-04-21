@@ -11,7 +11,7 @@ ip_addr_prod: "3.92.49.186"
 port_app: "8181"
 
 # secret data vaulted
-github_private_key: "{{ vault_github_private_key }}"
+github_private_key: "{{vault_github_private_key}}"
 docker_hub_login: "{{ vault_docker_hub_login }}"
 docker_hub_email: "{{ vault_docker_hub_email }}"
 docker_hub_password: "{{ vault_docker_hub_password }}"
